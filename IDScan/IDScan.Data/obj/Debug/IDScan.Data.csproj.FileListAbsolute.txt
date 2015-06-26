@@ -1,0 +1,10 @@
+C:\MVC5\_SUNNY\IDScan\IDScan.Data\bin\Debug\IDScan.Data.dll.config
+C:\MVC5\_SUNNY\IDScan\IDScan.Data\bin\Debug\IDScan.Data.dll
+C:\MVC5\_SUNNY\IDScan\IDScan.Data\bin\Debug\IDScan.Data.pdb
+C:\MVC5\_SUNNY\IDScan\IDScan.Data\bin\Debug\EntityFramework.dll
+C:\MVC5\_SUNNY\IDScan\IDScan.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\MVC5\_SUNNY\IDScan\IDScan.Data\bin\Debug\EntityFramework.xml
+C:\MVC5\_SUNNY\IDScan\IDScan.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\MVC5\_SUNNY\IDScan\IDScan.Data\obj\Debug\IDScan.Data.csprojResolveAssemblyReference.cache
+C:\MVC5\_SUNNY\IDScan\IDScan.Data\obj\Debug\IDScan.Data.dll
+C:\MVC5\_SUNNY\IDScan\IDScan.Data\obj\Debug\IDScan.Data.pdb

@@ -1,0 +1,13 @@
+C:\Program Files (x86)\AssureTec\AssureID\sdk\samples\C#\CsAdvancedExample\CsAdvancedExample\bin\Debug\CsAdvancedExample.exe
+C:\Program Files (x86)\AssureTec\AssureID\sdk\samples\C#\CsAdvancedExample\CsAdvancedExample\bin\Debug\CsAdvancedExample.pdb
+C:\Program Files (x86)\AssureTec\AssureID\sdk\samples\C#\CsAdvancedExample\CsAdvancedExample\obj\x86\Debug\CsAdvancedExample2010.csprojResolveAssemblyReference.cache
+C:\Program Files (x86)\AssureTec\AssureID\sdk\samples\C#\CsAdvancedExample\CsAdvancedExample\obj\x86\Debug\CsAdvancedExample.AboutForm.resources
+C:\Program Files (x86)\AssureTec\AssureID\sdk\samples\C#\CsAdvancedExample\CsAdvancedExample\obj\x86\Debug\CsAdvancedExample.DocumentFlipForm.resources
+C:\Program Files (x86)\AssureTec\AssureID\sdk\samples\C#\CsAdvancedExample\CsAdvancedExample\obj\x86\Debug\CsAdvancedExample.MainForm.resources
+C:\Program Files (x86)\AssureTec\AssureID\sdk\samples\C#\CsAdvancedExample\CsAdvancedExample\obj\x86\Debug\CsAdvancedExample.MrzCorrectionForm.resources
+C:\Program Files (x86)\AssureTec\AssureID\sdk\samples\C#\CsAdvancedExample\CsAdvancedExample\obj\x86\Debug\CsAdvancedExample.Resources.resources
+C:\Program Files (x86)\AssureTec\AssureID\sdk\samples\C#\CsAdvancedExample\CsAdvancedExample\obj\x86\Debug\CsAdvancedExample2010.csproj.GenerateResource.Cache
+C:\Program Files (x86)\AssureTec\AssureID\sdk\samples\C#\CsAdvancedExample\CsAdvancedExample\obj\x86\Debug\CsAdvancedExample.exe
+C:\Program Files (x86)\AssureTec\AssureID\sdk\samples\C#\CsAdvancedExample\CsAdvancedExample\obj\x86\Debug\CsAdvancedExample.pdb
+C:\_SUNNY\CsAdvancedExample\CsAdvancedExample\obj\x86\Debug\CsAdvancedExample.exe
+C:\_SUNNY\CsAdvancedExample\CsAdvancedExample\obj\x86\Debug\CsAdvancedExample.pdb

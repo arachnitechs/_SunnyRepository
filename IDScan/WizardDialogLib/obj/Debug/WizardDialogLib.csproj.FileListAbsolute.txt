@@ -1,0 +1,9 @@
+C:\_SUNNY\IDScan\WizardDialogLib\bin\Debug\SMS.Windows.Forms.dll
+C:\_SUNNY\IDScan\WizardDialogLib\bin\Debug\SMS.Windows.Forms.pdb
+C:\_SUNNY\IDScan\WizardDialogLib\obj\Debug\SMS.Windows.Forms.ExteriorWizardPage.resources
+C:\_SUNNY\IDScan\WizardDialogLib\obj\Debug\SMS.Windows.Forms.InteriorWizardPage.resources
+C:\_SUNNY\IDScan\WizardDialogLib\obj\Debug\SMS.Windows.Forms.WizardForm.resources
+C:\_SUNNY\IDScan\WizardDialogLib\obj\Debug\SMS.Windows.Forms.WizardPage.resources
+C:\_SUNNY\IDScan\WizardDialogLib\obj\Debug\WizardDialogLib.csproj.GenerateResource.Cache
+C:\_SUNNY\IDScan\WizardDialogLib\obj\Debug\SMS.Windows.Forms.dll
+C:\_SUNNY\IDScan\WizardDialogLib\obj\Debug\SMS.Windows.Forms.pdb

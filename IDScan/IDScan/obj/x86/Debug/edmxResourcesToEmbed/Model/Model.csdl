@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="MembershipIDScanEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AspNetRoles" EntityType="Model.AspNetRole" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Model.AspNetUserClaim" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Model.AspNetUserLogin" />
+    <EntitySet Name="AspNetUsers" EntityType="Model.AspNetUser" />
+    <EntitySet Name="clubs" EntityType="Model.club" />
+    <EntitySet Name="events" EntityType="Model.event" />
+    <EntitySet Name="memberships" EntityType="Model.membership" />
+    <EntitySet Name="picklists" EntityType="Model.picklist" />
+    <EntitySet Name="scandatas" EntityType="Model.scandata" />
+    <EntitySet Name="scantags" EntityType="Model.scantag" />
+    <EntitySet Name="sysdiagrams" EntityType="Model.sysdiagram" />
+    <EntitySet Name="tags" EntityType="Model.tag" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_membership_club" Association="Model.FK_membership_club">
+      <End Role="club" EntitySet="clubs" />
+      <End Role="membership" EntitySet="memberships" />
+    </AssociationSet>
+    <AssociationSet Name="FK_event_club" Association="Model.FK_event_club">
+      <End Role="club" EntitySet="clubs" />
+      <End Role="event" EntitySet="events" />
+    </AssociationSet>
+    <AssociationSet Name="FK_scandata_club" Association="Model.FK_scandata_club">
+      <End Role="club" EntitySet="clubs" />
+      <End Role="scandata" EntitySet="scandatas" />
+    </AssociationSet>
+    <EntitySet Name="memberattendances" EntityType="Model.memberattendance" />
+    <AssociationSet Name="FK_memberattendance_membership" Association="Model.FK_memberattendance_membership">
+      <End Role="membership" EntitySet="memberships" />
+      <End Role="memberattendance" EntitySet="memberattendances" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AspNetRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+  </EntityType>
+  <EntityType Name="club">
+    <Key>
+      <PropertyRef Name="clubid" />
+    </Key>
+    <Property Name="clubid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="address1" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="address2" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="city" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="stateprov" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="zip" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="email" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="phone" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="memberships" Relationship="Model.FK_membership_club" FromRole="club" ToRole="membership" />
+    <NavigationProperty Name="event" Relationship="Model.FK_event_club" FromRole="club" ToRole="event" />
+    <NavigationProperty Name="scandatas" Relationship="Model.FK_scandata_club" FromRole="club" ToRole="scandata" />
+  </EntityType>
+  <EntityType Name="event">
+    <Key>
+      <PropertyRef Name="eventid" />
+    </Key>
+    <Property Name="eventid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="clubid" Type="Int32" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="startdate" Type="DateTime" />
+    <Property Name="enddate" Type="DateTime" />
+    <Property Name="fee" Type="Double" />
+    <Property Name="memo" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="club" Relationship="Model.FK_event_club" FromRole="event" ToRole="club" />
+  </EntityType>
+  <EntityType Name="membership">
+    <Key>
+      <PropertyRef Name="membershipid" />
+    </Key>
+    <Property Name="membershipid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="clubid" Type="Int32" Nullable="false" />
+    <Property Name="scanid" Type="Int32" Nullable="false" />
+    <Property Name="first" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="middle" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="last" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="dob" Type="DateTime" />
+    <Property Name="gender" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="countrycode" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="address1" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="address2" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="city" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="stateprov" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="zip" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="imagepath" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="applicationdate" Type="DateTime" />
+    <Property Name="approvaldate" Type="DateTime" />
+    <Property Name="statusid" Type="Int32" />
+    <Property Name="expirationdate" Type="DateTime" />
+    <Property Name="email" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="club" Relationship="Model.FK_membership_club" FromRole="membership" ToRole="club" />
+    <NavigationProperty Name="memberattendances" Relationship="Model.FK_memberattendance_membership" FromRole="membership" ToRole="memberattendance" />
+  </EntityType>
+  <EntityType Name="picklist">
+    <Key>
+      <PropertyRef Name="picklistid" />
+    </Key>
+    <Property Name="picklistid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="value" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="scandata">
+    <Key>
+      <PropertyRef Name="scandataid" />
+    </Key>
+    <Property Name="scandataid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="clubid" Type="Int32" Nullable="false" />
+    <Property Name="documentid" Type="Int32" Nullable="false" />
+    <Property Name="documenttype" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="first" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="middle" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="last" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="dob" Type="DateTime" />
+    <Property Name="gender" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="countrycode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="type" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="code" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="address1" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="address2" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="city" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="stateprov" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="zip" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="imagepath" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="creatdate" Type="DateTime" />
+    <Property Name="issuedate" Type="DateTime" />
+    <Property Name="expiredate" Type="DateTime" />
+    <NavigationProperty Name="club" Relationship="Model.FK_scandata_club" FromRole="scandata" ToRole="club" />
+  </EntityType>
+  <EntityType Name="scantag">
+    <Key>
+      <PropertyRef Name="scantagid" />
+    </Key>
+    <Property Name="scantagid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tagid" Type="Int32" Nullable="false" />
+    <Property Name="scanid" Type="Int32" Nullable="false" />
+    <Property Name="clubid" Type="Int32" Nullable="false" />
+    <Property Name="createdate" Type="DateTime" />
+    <Property Name="expiredate" Type="DateTime" />
+    <Property Name="startdate" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tag">
+    <Key>
+      <PropertyRef Name="tagid" />
+    </Key>
+    <Property Name="tagid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="clubid" Type="Int32" />
+    <Property Name="description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="creatdate" Type="DateTime" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Model.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Model.AspNetUserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Model.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Model.AspNetUserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_membership_club">
+    <End Role="club" Type="Model.club" Multiplicity="1" />
+    <End Role="membership" Type="Model.membership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="club">
+        <PropertyRef Name="clubid" />
+      </Principal>
+      <Dependent Role="membership">
+        <PropertyRef Name="clubid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_event_club">
+    <End Type="Model.club" Role="club" Multiplicity="1" />
+    <End Type="Model.event" Role="event" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="club">
+        <PropertyRef Name="clubid" />
+      </Principal>
+      <Dependent Role="event">
+        <PropertyRef Name="eventid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_scandata_club">
+    <End Type="Model.club" Role="club" Multiplicity="1" />
+    <End Type="Model.scandata" Role="scandata" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="club">
+        <PropertyRef Name="clubid" />
+      </Principal>
+      <Dependent Role="scandata">
+        <PropertyRef Name="clubid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="memberattendance">
+    <Key>
+      <PropertyRef Name="attendanceid" />
+    </Key>
+    <Property Type="Int32" Name="attendanceid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="membershipid" Nullable="false" />
+    <Property Type="Int32" Name="scanid" Nullable="false" />
+    <Property Type="String" Name="direction" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="timestamp" />
+    <NavigationProperty Name="membership" Relationship="Model.FK_memberattendance_membership" FromRole="memberattendance" ToRole="membership" />
+  </EntityType>
+  <Association Name="FK_memberattendance_membership">
+    <End Type="Model.membership" Role="membership" Multiplicity="1" />
+    <End Type="Model.memberattendance" Role="memberattendance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="membership">
+        <PropertyRef Name="membershipid" />
+      </Principal>
+      <Dependent Role="memberattendance">
+        <PropertyRef Name="membershipid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

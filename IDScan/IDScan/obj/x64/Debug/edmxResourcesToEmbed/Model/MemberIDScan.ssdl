@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MembershipIDScanModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MembershipIDScanModelStoreContainer">
+    <EntitySet Name="AspNetRoles" EntityType="MembershipIDScanModel.Store.AspNetRoles" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="AspNetUserClaims" EntityType="MembershipIDScanModel.Store.AspNetUserClaims" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="AspNetUserLogins" EntityType="MembershipIDScanModel.Store.AspNetUserLogins" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="AspNetUsers" EntityType="MembershipIDScanModel.Store.AspNetUsers" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="club" EntityType="MembershipIDScanModel.Store.club" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="event" EntityType="MembershipIDScanModel.Store.event" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="memberattendance" EntityType="MembershipIDScanModel.Store.memberattendance" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="membership" EntityType="MembershipIDScanModel.Store.membership" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="picklist" EntityType="MembershipIDScanModel.Store.picklist" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="scandata" EntityType="MembershipIDScanModel.Store.scandata" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="scantag" EntityType="MembershipIDScanModel.Store.scantag" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="sysdiagrams" EntityType="MembershipIDScanModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="tag" EntityType="MembershipIDScanModel.Store.tag" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="MembershipIDScanModel.Store.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="MembershipIDScanModel.Store.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_event_club" Association="MembershipIDScanModel.Store.FK_event_club">
+      <End Role="club" EntitySet="club" />
+      <End Role="event" EntitySet="event" />
+    </AssociationSet>
+    <AssociationSet Name="FK_memberattendance_membership" Association="MembershipIDScanModel.Store.FK_memberattendance_membership">
+      <End Role="membership" EntitySet="membership" />
+      <End Role="memberattendance" EntitySet="memberattendance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_membership_club" Association="MembershipIDScanModel.Store.FK_membership_club">
+      <End Role="club" EntitySet="club" />
+      <End Role="membership" EntitySet="membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK_scandata_club" Association="MembershipIDScanModel.Store.FK_scandata_club">
+      <End Role="club" EntitySet="club" />
+      <End Role="scandata" EntitySet="scandata" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="ProviderKey" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="UserId" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="club">
+    <Key>
+      <PropertyRef Name="clubid" />
+    </Key>
+    <Property Name="clubid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="address1" Type="nvarchar" MaxLength="50" />
+    <Property Name="address2" Type="nvarchar" MaxLength="50" />
+    <Property Name="city" Type="nvarchar" MaxLength="50" />
+    <Property Name="stateprov" Type="nvarchar" MaxLength="50" />
+    <Property Name="zip" Type="nvarchar" MaxLength="10" />
+    <Property Name="email" Type="nvarchar" MaxLength="150" />
+    <Property Name="phone" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="event">
+    <Key>
+      <PropertyRef Name="eventid" />
+    </Key>
+    <Property Name="eventid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="clubid" Type="int" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="500" />
+    <Property Name="startdate" Type="datetime" />
+    <Property Name="enddate" Type="datetime" />
+    <Property Name="fee" Type="float" />
+    <Property Name="memo" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="memberattendance">
+    <Key>
+      <PropertyRef Name="attendanceid" />
+    </Key>
+    <Property Name="attendanceid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="membershipid" Type="int" Nullable="false" />
+    <Property Name="scanid" Type="int" Nullable="false" />
+    <Property Name="direction" Type="nvarchar" MaxLength="5" />
+    <Property Name="timestamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="membership">
+    <Key>
+      <PropertyRef Name="membershipid" />
+    </Key>
+    <Property Name="membershipid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="clubid" Type="int" Nullable="false" />
+    <Property Name="scanid" Type="int" Nullable="false" />
+    <Property Name="first" Type="nvarchar" MaxLength="50" />
+    <Property Name="middle" Type="nvarchar" MaxLength="50" />
+    <Property Name="last" Type="nvarchar" MaxLength="50" />
+    <Property Name="dob" Type="datetime" />
+    <Property Name="gender" Type="nvarchar" MaxLength="20" />
+    <Property Name="countrycode" Type="nvarchar" MaxLength="10" />
+    <Property Name="address1" Type="nvarchar" MaxLength="50" />
+    <Property Name="address2" Type="nvarchar" MaxLength="50" />
+    <Property Name="city" Type="nvarchar" MaxLength="50" />
+    <Property Name="stateprov" Type="nvarchar" MaxLength="50" />
+    <Property Name="zip" Type="nvarchar" MaxLength="10" />
+    <Property Name="imagepath" Type="nvarchar" MaxLength="500" />
+    <Property Name="applicationdate" Type="datetime" />
+    <Property Name="approvaldate" Type="datetime" />
+    <Property Name="statusid" Type="int" />
+    <Property Name="expirationdate" Type="datetime" />
+    <Property Name="email" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="picklist">
+    <Key>
+      <PropertyRef Name="picklistid" />
+    </Key>
+    <Property Name="picklistid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="nvarchar" MaxLength="50" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" />
+    <Property Name="value" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="scandata">
+    <Key>
+      <PropertyRef Name="scandataid" />
+    </Key>
+    <Property Name="scandataid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="clubid" Type="int" Nullable="false" />
+    <Property Name="documentid" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="documenttype" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="first" Type="nvarchar" MaxLength="50" />
+    <Property Name="middle" Type="nvarchar" MaxLength="50" />
+    <Property Name="last" Type="nvarchar" MaxLength="50" />
+    <Property Name="dob" Type="datetime" />
+    <Property Name="gender" Type="nvarchar" MaxLength="20" />
+    <Property Name="countrycode" Type="nvarchar" MaxLength="50" />
+    <Property Name="type" Type="nvarchar" MaxLength="10" />
+    <Property Name="code" Type="nchar" MaxLength="10" />
+    <Property Name="address" Type="nvarchar" MaxLength="500" />
+    <Property Name="address1" Type="nvarchar" MaxLength="50" />
+    <Property Name="address2" Type="nvarchar" MaxLength="50" />
+    <Property Name="city" Type="nvarchar" MaxLength="50" />
+    <Property Name="stateprov" Type="nvarchar" MaxLength="50" />
+    <Property Name="zip" Type="nvarchar" MaxLength="10" />
+    <Property Name="imagepath" Type="nvarchar" MaxLength="500" />
+    <Property Name="creatdate" Type="datetime" />
+    <Property Name="issuedate" Type="datetime" />
+    <Property Name="expiredate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="scantag">
+    <Key>
+      <PropertyRef Name="scantagid" />
+    </Key>
+    <Property Name="scantagid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="tagid" Type="int" Nullable="false" />
+    <Property Name="scanid" Type="int" Nullable="false" />
+    <Property Name="clubid" Type="int" Nullable="false" />
+    <Property Name="createdate" Type="datetime" />
+    <Property Name="expiredate" Type="datetime" />
+    <Property Name="startdate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tag">
+    <Key>
+      <PropertyRef Name="tagid" />
+    </Key>
+    <Property Name="tagid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="clubid" Type="int" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" />
+    <Property Name="creatdate" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="MembershipIDScanModel.Store.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="MembershipIDScanModel.Store.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="MembershipIDScanModel.Store.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="MembershipIDScanModel.Store.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_event_club">
+    <End Role="club" Type="MembershipIDScanModel.Store.club" Multiplicity="1" />
+    <End Role="event" Type="MembershipIDScanModel.Store.event" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="club">
+        <PropertyRef Name="clubid" />
+      </Principal>
+      <Dependent Role="event">
+        <PropertyRef Name="eventid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_memberattendance_membership">
+    <End Role="membership" Type="MembershipIDScanModel.Store.membership" Multiplicity="1" />
+    <End Role="memberattendance" Type="MembershipIDScanModel.Store.memberattendance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="membership">
+        <PropertyRef Name="membershipid" />
+      </Principal>
+      <Dependent Role="memberattendance">
+        <PropertyRef Name="membershipid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_membership_club">
+    <End Role="club" Type="MembershipIDScanModel.Store.club" Multiplicity="1" />
+    <End Role="membership" Type="MembershipIDScanModel.Store.membership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="club">
+        <PropertyRef Name="clubid" />
+      </Principal>
+      <Dependent Role="membership">
+        <PropertyRef Name="clubid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_scandata_club">
+    <End Role="club" Type="MembershipIDScanModel.Store.club" Multiplicity="1" />
+    <End Role="scandata" Type="MembershipIDScanModel.Store.scandata" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="club">
+        <PropertyRef Name="clubid" />
+      </Principal>
+      <Dependent Role="scandata">
+        <PropertyRef Name="clubid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+</Schema>

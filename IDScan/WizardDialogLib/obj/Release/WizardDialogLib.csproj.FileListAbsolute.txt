@@ -1,0 +1,7 @@
+C:\_SUNNY\WinWiz\WizardDialogLib\bin\Release\SMS.Windows.Forms.dll
+C:\_SUNNY\WinWiz\WizardDialogLib\obj\Release\SMS.Windows.Forms.ExteriorWizardPage.resources
+C:\_SUNNY\WinWiz\WizardDialogLib\obj\Release\SMS.Windows.Forms.InteriorWizardPage.resources
+C:\_SUNNY\WinWiz\WizardDialogLib\obj\Release\SMS.Windows.Forms.WizardForm.resources
+C:\_SUNNY\WinWiz\WizardDialogLib\obj\Release\SMS.Windows.Forms.WizardPage.resources
+C:\_SUNNY\WinWiz\WizardDialogLib\obj\Release\WizardDialogLib.csproj.GenerateResource.Cache
+C:\_SUNNY\WinWiz\WizardDialogLib\obj\Release\SMS.Windows.Forms.dll

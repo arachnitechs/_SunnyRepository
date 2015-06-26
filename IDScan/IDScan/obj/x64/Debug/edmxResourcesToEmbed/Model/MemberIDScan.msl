@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MembershipIDScanModelStoreContainer" CdmEntityContainer="MembershipIDScanEntities">
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="MembershipIDScanModel.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="MembershipIDScanModel.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="MembershipIDScanModel.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="MembershipIDScanModel.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="clubs">
+      <EntityTypeMapping TypeName="MembershipIDScanModel.club">
+        <MappingFragment StoreEntitySet="club">
+          <ScalarProperty Name="clubid" ColumnName="clubid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="address1" ColumnName="address1" />
+          <ScalarProperty Name="address2" ColumnName="address2" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="stateprov" ColumnName="stateprov" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="events">
+      <EntityTypeMapping TypeName="MembershipIDScanModel.event">
+        <MappingFragment StoreEntitySet="event">
+          <ScalarProperty Name="eventid" ColumnName="eventid" />
+          <ScalarProperty Name="clubid" ColumnName="clubid" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="startdate" ColumnName="startdate" />
+          <ScalarProperty Name="enddate" ColumnName="enddate" />
+          <ScalarProperty Name="fee" ColumnName="fee" />
+          <ScalarProperty Name="memo" ColumnName="memo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="memberattendances">
+      <EntityTypeMapping TypeName="MembershipIDScanModel.memberattendance">
+        <MappingFragment StoreEntitySet="memberattendance">
+          <ScalarProperty Name="attendanceid" ColumnName="attendanceid" />
+          <ScalarProperty Name="membershipid" ColumnName="membershipid" />
+          <ScalarProperty Name="scanid" ColumnName="scanid" />
+          <ScalarProperty Name="direction" ColumnName="direction" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="memberships">
+      <EntityTypeMapping TypeName="MembershipIDScanModel.membership">
+        <MappingFragment StoreEntitySet="membership">
+          <ScalarProperty Name="membershipid" ColumnName="membershipid" />
+          <ScalarProperty Name="clubid" ColumnName="clubid" />
+          <ScalarProperty Name="scanid" ColumnName="scanid" />
+          <ScalarProperty Name="first" ColumnName="first" />
+          <ScalarProperty Name="middle" ColumnName="middle" />
+          <ScalarProperty Name="last" ColumnName="last" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="countrycode" ColumnName="countrycode" />
+          <ScalarProperty Name="address1" ColumnName="address1" />
+          <ScalarProperty Name="address2" ColumnName="address2" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="stateprov" ColumnName="stateprov" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="imagepath" ColumnName="imagepath" />
+          <ScalarProperty Name="applicationdate" ColumnName="applicationdate" />
+          <ScalarProperty Name="approvaldate" ColumnName="approvaldate" />
+          <ScalarProperty Name="statusid" ColumnName="statusid" />
+          <ScalarProperty Name="expirationdate" ColumnName="expirationdate" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="picklists">
+      <EntityTypeMapping TypeName="MembershipIDScanModel.picklist">
+        <MappingFragment StoreEntitySet="picklist">
+          <ScalarProperty Name="picklistid" ColumnName="picklistid" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="scantags">
+      <EntityTypeMapping TypeName="MembershipIDScanModel.scantag">
+        <MappingFragment StoreEntitySet="scantag">
+          <ScalarProperty Name="scantagid" ColumnName="scantagid" />
+          <ScalarProperty Name="tagid" ColumnName="tagid" />
+          <ScalarProperty Name="scanid" ColumnName="scanid" />
+          <ScalarProperty Name="clubid" ColumnName="clubid" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="expiredate" ColumnName="expiredate" />
+          <ScalarProperty Name="startdate" ColumnName="startdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="MembershipIDScanModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tags">
+      <EntityTypeMapping TypeName="MembershipIDScanModel.tag">
+        <MappingFragment StoreEntitySet="tag">
+          <ScalarProperty Name="tagid" ColumnName="tagid" />
+          <ScalarProperty Name="clubid" ColumnName="clubid" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="creatdate" ColumnName="creatdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="scandatas">
+      <EntityTypeMapping TypeName="MembershipIDScanModel.scandata">
+        <MappingFragment StoreEntitySet="scandata">
+          <ScalarProperty Name="expiredate" ColumnName="expiredate" />
+          <ScalarProperty Name="issuedate" ColumnName="issuedate" />
+          <ScalarProperty Name="creatdate" ColumnName="creatdate" />
+          <ScalarProperty Name="imagepath" ColumnName="imagepath" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="stateprov" ColumnName="stateprov" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="address2" ColumnName="address2" />
+          <ScalarProperty Name="address1" ColumnName="address1" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="countrycode" ColumnName="countrycode" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="last" ColumnName="last" />
+          <ScalarProperty Name="middle" ColumnName="middle" />
+          <ScalarProperty Name="first" ColumnName="first" />
+          <ScalarProperty Name="documenttype" ColumnName="documenttype" />
+          <ScalarProperty Name="documentid" ColumnName="documentid" />
+          <ScalarProperty Name="clubid" ColumnName="clubid" />
+          <ScalarProperty Name="scandataid" ColumnName="scandataid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

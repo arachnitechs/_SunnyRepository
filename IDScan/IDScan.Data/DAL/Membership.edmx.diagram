@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d29e932617924269ac42e902891a8360" Name="Diagram1">
+        <EntityTypeShape EntityType="IDScan.Data.DAL.club" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IDScan.Data.DAL.clubevent" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IDScan.Data.DAL.sysdiagram" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="IDScan.Data.DAL.FK_event_club" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="IDScan.Data.DAL.membership" Width="1.5" PointX="3" PointY="5.5" />
+        <AssociationConnector Association="IDScan.Data.DAL.FK_membership_club" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
